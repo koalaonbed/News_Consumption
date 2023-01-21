@@ -27,7 +27,7 @@ extra_len = 20
 
 ## JPEG/JFIF supports a maximum image size of 65,535×65,535 pixels
 ## The 12000 x 6500 image happens to be over this limit.
-"""
+
 def concat_images(kind, images, dst_filename):
     width = kind[0]
     height = kind[1]
@@ -194,9 +194,10 @@ writer = csv.writer(csvFile)
 concat_images_by_image_size(OCR_PATH, CONCAT_PATH, sectors)
 OCR(CONCAT_PATH)
 print('done')
-#close the connection
-#conn.close()
-"""
+
+
+# Concat images and send to OCR API
+
 import numpy as np
 import time 
 from shapely.geometry import Polygon
