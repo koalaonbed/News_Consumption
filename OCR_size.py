@@ -606,10 +606,8 @@ def parse_OCR_files():
 
                 with open(RESULT_PATH, 'a', newline='', encoding="utf-8-sig") as csvFile:
                     writer = csv.writer(csvFile)
-                    if c_flag >= 2:
-                        writer.writerow([user, name.rsplit('/',2)[1],name.rsplit('/',2)[2], 0, text_one, edge_df.at[name.rsplit('/',2)[2],'n_main'],0.74,0,'!!!!!'])
-                    else:
-                        writer.writerow([user, name.rsplit('/',2)[1],name.rsplit('/',2)[2], 0, text_one, edge_df.at[name.rsplit('/',2)[2],'n_main'],0.74,0])
+                    
+                    writer.writerow([user, name.rsplit('/',2)[1],name.rsplit('/',2)[2], 0, text_one, edge_df.at[name.rsplit('/',2)[2],'n_main'],0.74,0])
             else:
                 edge_list = str(edge_str).split('_')
                 edge_int = list(map(int, edge_list))
