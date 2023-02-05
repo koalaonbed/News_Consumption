@@ -7,6 +7,9 @@ import csv
 credential_path = 'My_First_Project-a54e1af6d90b.json'
 os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = credential_path
 
+input_file = ""
+output_file = ""
+
 """
 def print_result(annotations):
     score = annotations.document_sentiment.score
@@ -91,7 +94,7 @@ def analyze(movie_review_filename):
         #content = review_file.read()
         for i,row in enumerate(rows):
             if i==0:
-                with open("sentiment_coding/1108_1129_sent.csv", 'a', newline='', encoding="utf-8-sig") as csvFile:
+                with open(output_file, 'a', newline='', encoding="utf-8-sig") as csvFile:
                     writer = csv.writer(csvFile)
                     writer.writerow(row)
                 continue
@@ -122,7 +125,7 @@ def analyze(movie_review_filename):
             else:
                 row.extend([-99,-99])
             """
-            with open("sentiment_coding/1108_1129_sent.csv", 'a', newline='', encoding="utf-8-sig") as csvFile:
+            with open(output_file, 'a', newline='', encoding="utf-8-sig") as csvFile:
                 writer = csv.writer(csvFile)
                 writer.writerow(row)
 
@@ -144,7 +147,7 @@ if __name__ == "__main__":
     # the file consists of sentences which you want to analyze
     # analyze(args.movie_review_filename)
 
-    analyze("sentiment_coding/1108_1129.csv")
+    analyze(input_file)
 
 
 
